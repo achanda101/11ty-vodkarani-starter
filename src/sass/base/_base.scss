@@ -1,0 +1,31 @@
+body {
+	font-family: var(--ff-sans);
+	font-size: var(--fs-300);
+}
+
+header {
+	font-family: var(--ff-serif);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--ff-serif);
+}
+
+h1 {
+	font-size: var(--fs-800);
+}
+
+h2 {
+	font-size: var(--fs-700);
+}
+
+h3 {
+	font-size: var(--fs-600);
+}
+
+h4 {
+	font-size: var(--fs-500);
+}

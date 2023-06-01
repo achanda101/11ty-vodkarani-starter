@@ -1,0 +1,11 @@
+{
+	"title": "11ty Vodkarani Starter",
+	"url": "https://example.com/",
+	"language": "en",
+	"description": "This is your basic 11ty starter to get things moving!",
+	"author": {
+		"name": "Your Name Here",
+		"email": "youremailaddress@example.com",
+		"url": "https://example.com/about-me/"
+	}
+}

@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+.container {
+	width: 100%;
+
+	background-color: transparent;
+	&.primary-bg {
+		background-color: hsl(var(--clr-primary-100));
+	}
+	&.secondary-bg {
+		background-color: hsl(var(--clr-secondary-100));
+	}
+	&.accent-bg {
+		background-color: hsl(var(--clr-accent-550));
+	}
+}
+
+section {
+	margin-inline: auto;
+	--width: 90vw;
+	@include mq(medium) {
+		--width: 65vw;
+	}
+
+	@include mq(large) {
+		--width: 65vw;
+	}
+
+	max-width: var(--width, 60ch);
+}

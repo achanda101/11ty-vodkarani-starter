@@ -1,0 +1,16 @@
+.flow > :where(:not(:first-child)) {
+	margin-top: var(--flow-spacer, var(--spacer));
+}
+
+.flow {
+	padding-top: var(--flow-spacer-top);
+}
+
+.flow {
+	padding-bottom: var(--flow-spacer-bottom);
+}
+
+// to compensate for line-height of text
+.flow-nontext {
+	padding-top: var(--flow-spacer-nontext);
+}

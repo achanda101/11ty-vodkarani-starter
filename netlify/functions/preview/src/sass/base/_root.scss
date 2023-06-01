@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+:root {
+	--ff-sans: #{$ff-sans};
+	--ff-serif: #{$ff-serif};
+
+	--spacer: #{$spacer};
+	--flow-spacer: #{$flow-spacer};
+	--flow-spacer-top: #{$flow-spacer-top};
+	--flow-spacer-bottom: #{$flow-spacer-bottom};
+	--flow-spacer-nontext: #{$flow-spacer-nontext};
+	--gap: #{$gap};
+
+    --clr-dark-grey: hsl(0 0% 10%);
+    --clr-grey: hsl(0 0% 50%);
+    --clr-light-grey: hsl(0 0% 90%);
+
+	@each $colour, $shade in $colours {
+		@each $property, $value in $shade {
+			--clr-#{$colour}-#{$property}: #{$value};
+		}
+	}
+
+	@each $screen-size, $property in $font-sizes {
+		@if $screen-size ==small {
+			@each $prop, $value in $property {
+				--fs-#{$prop}: #{$value};
+			}
+		} @else {
+			@include mq($screen-size) {
+				@each $prop, $value in $property {
+					--fs-#{$prop}: #{$value};
+				}
+			}
+		}
+	}
+}
