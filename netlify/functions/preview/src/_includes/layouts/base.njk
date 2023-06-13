@@ -19,14 +19,35 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair:ital,wght@0,400;1,300&display=swap"
 			rel="stylesheet"
-		/>
+		 />
 
-        <link rel="stylesheet"
-              href="{{ '/css/style.css' | url }}">
+		<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
 	</head>
 	<body>
 		<main>
+			<header class="primary-header">
+				<div class="wrapper headwrap">
+					<div class="primary-header__inner">
+						<span class="logo">LOGO</span>
+						<ul class="nav-list">
+							<li>
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">Blog</a>
+							</li>
+							<li>
+								<a href="#">About</a>
+							</li>
+							<li>
+								<a href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</header>
 			{{ content | safe }}
 		</main>
+		<script src="{{ '/utils/primary-header.js' | url }}"></script>
 	</body>
 </html>

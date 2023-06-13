@@ -15,7 +15,7 @@
 	}
 }
 
-section {
+.wrapper {
 	margin-inline: auto;
 	--width: 90vw;
 	@include mq(medium) {
@@ -27,4 +27,8 @@ section {
 	}
 
 	max-width: var(--width, 60ch);
+
+    &.headwrap {
+        width: min(65rem, 100% - 2rem);
+    }
 }

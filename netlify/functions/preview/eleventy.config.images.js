@@ -22,7 +22,7 @@ module.exports = eleventyConfig => {
 			outputDir: path.join(eleventyConfig.dir.output, "img"), // Advanced usage note: `eleventyConfig.dir` works here because we’re using addPlugin.
 		});
 
-		console.log(JSON.stringify(metadata, null, 2));
+		// console.log(JSON.stringify(metadata, null, 2));
 
 		// TODO loading=eager and fetchpriority=high
 		let imageAttributes = {
