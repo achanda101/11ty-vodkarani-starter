@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+.logo {
+    height: var(--logo-height);
+    transition: height 500ms;
+
+    img {
+            width: auto;
+            object-fit: contain;
+        }
+}
+
+.logo.sticking {
+    height: var(--logo-height-sticking);
+}
+
+.logo {
+    color: var(--_logo-color);
+}

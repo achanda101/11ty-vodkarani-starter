@@ -13,9 +13,11 @@
 	--_logo-color: hsl(var(--clr-neutral-300));
 	--_nav-link-color: hsl(var(--clr-neutral-100));
 
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 	color: hsl(var(--clr-neutral-100));
 	background-color: var(--_bg);
+
+	height: fit-content;
 
 	position: sticky;
 	top: 0;
@@ -38,11 +40,6 @@
 	justify-content: space-between;
 }
 
-.primary-header__inner {
-	display: flex;
-	justify-content: space-between;
-}
-
 .primary-header a {
 	color: var(--_nav-link-color);
 }
@@ -50,10 +47,6 @@
 .primary-header a:hover,
 .primary-header a:focus {
 	opacity: 0.7;
-}
-
-.logo {
-	color: var(--_logo-color);
 }
 
 .nav-list {
