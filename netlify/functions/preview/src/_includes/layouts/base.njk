@@ -16,10 +16,7 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair:ital,wght@0,400;1,300&display=swap"
-			rel="stylesheet"
-		 />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
 	</head>
@@ -31,25 +28,18 @@
 						<span class="logo">
 							<img src="https://res.cloudinary.com/achanda/image/upload/v1693802110/temp-logo_magodc.svg" alt="Logo">
 						</span>
-						<ul class="nav-list">
-							<li>
-								<a href="#">Home</a>
-							</li>
-							<li>
-								<a href="#">Blog</a>
-							</li>
-							<li>
-								<a href="#">About</a>
-							</li>
-							<li>
-								<a href="#">Contact</a>
-							</li>
-						</ul>
+						{% include './navigation.njk' %}
+						{# TODO: Debug the position of search icon on iphone simulator #}
+						{# {% include './search.njk' %} #}
+						<img src="{{ '/img/hamburger-menu-icon.svg' | url }}"
+							class="mobileToggle"
+							alt="Mobile Menu Toggle Icon">
 					</div>
 				</div>
 			</header>
 			{{ content | safe }}
 		</main>
 		<script src="{{ '/utils/primary-header.js' | url }}"></script>
+		<!-- <script src="{{ '/utils/search.js' | url }}"></script> -->
 	</body>
 </html>

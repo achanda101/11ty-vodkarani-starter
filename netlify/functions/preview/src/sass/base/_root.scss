@@ -4,6 +4,11 @@
 	--ff-sans: #{$ff-sans};
 	--ff-serif: #{$ff-serif};
 
+	--fw-normal: #{$fw-normal};
+	--fw-bold: #{$fw-bold};
+	--fw-light: #{$fw-light};
+	--fw-bolder: #{$fw-bolder};
+
 	--spacer: #{$spacer};
 	--flow-spacer: #{$flow-spacer};
 	--flow-spacer-top: #{$flow-spacer-top};
@@ -13,6 +18,8 @@
 
 	--logo-height: #{$logo-height};
 	--logo-height-sticking: #{$logo-height-sticking};
+
+	--icon-height: #{$icon-height};
 
     --clr-dark-grey: hsl(0 0% 10%);
     --clr-grey: hsl(0 0% 50%);
@@ -36,5 +43,9 @@
 				}
 			}
 		}
+	}
+
+	@each $space, $value in $letter-spacing {
+		--ls-#{$space}: #{$value};
 	}
 }

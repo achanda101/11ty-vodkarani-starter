@@ -1,0 +1,94 @@
+@use '../abstracts/' as *;
+
+.nav-deck { 
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+    align-items: end;
+    visibility: hidden;
+
+    @include mq(medium) {
+        visibility: visible;
+    }
+}
+.nav-deck.showMobile {
+    visibility: visible;
+    position: absolute;
+    top: calc(var(--logo-height) + 2rem);
+    left: 0;
+    align-items: start;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: clamp(0.5rem, 5vw, 2rem);
+
+    li {
+        position: relative;
+    }
+
+    li a {
+        color: var(--_nav-link-color);
+        text-decoration: none;
+        font-size: var(--fs-400);
+        font-family: var(--ff-sans);
+        font-weight: var(--fw-light);
+        letter-spacing: var(--ls-wide);
+    }
+
+    li a:hover,
+    li a:focus {
+        opacity: 0.7;
+    }
+
+    li a::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--_nav-link-color);
+        transform: scaleX(0);
+        transition: transform 500ms ease-in-out;
+        transform-origin: right;
+    }
+
+    li a:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+.nav-deck.showMobile .nav-list {
+    flex-direction: column;
+
+    li a::before {
+        content: none;
+    }
+}
+
+img.mobileToggle {
+    height: var(--icon-height);
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+
+    /* The search div containing the mag glass icon and x icon are at z-index 10*/
+    z-index: 11;
+
+    position: absolute;
+    right: 0;
+    align-self: center;
+
+    @include mq(medium) {
+        display: none;
+    }
+}
+img.mobileToggle.hide {
+    display: none;
+}
+
+

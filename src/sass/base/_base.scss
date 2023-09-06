@@ -1,6 +1,13 @@
 body {
 	font-family: var(--ff-sans);
 	font-size: var(--fs-300);
+	/* Need to explicitly specify this because of the searchBox that slides in and out */
+	/* Comment this out during development and debugging */
+	overflow-x: hidden;
+}
+body.lockScroll {
+	height: 100dvh;
+	overflow: hidden;
 }
 
 header {

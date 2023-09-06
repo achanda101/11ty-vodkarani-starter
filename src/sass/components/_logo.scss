@@ -1,6 +1,8 @@
 @use '../abstracts/' as *;
 
 .logo {
+    flex-grow: 1;
+    align-self: center;
     height: var(--logo-height);
     transition: height 500ms;
 
