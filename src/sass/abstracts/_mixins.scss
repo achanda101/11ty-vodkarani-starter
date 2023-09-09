@@ -8,3 +8,12 @@
         @content;
     }
 }
+
+@mixin mqmax($key) {
+
+    $size: map-get($breakpoints, $key);
+
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}

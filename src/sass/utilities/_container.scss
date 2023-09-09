@@ -17,7 +17,7 @@
 
 .wrapper {
 	margin-inline: auto;
-	--width: 90vw;
+	--width: 85vw;
 	@include mq(medium) {
 		--width: 65vw;
 	}
@@ -32,4 +32,29 @@
         // width: min(65rem, 100% - 2rem);
 		width: 100%;
     }
+}
+
+.banner-container {
+	--_primary-header-pad: calc(2 * var(--primary-header-topbot-padding));
+	--_primary-header-ht: calc(var(--logo-height) + var(var(--_primary-header-pad)))
+	position: relative;
+
+	// the negative margin pushes the banner
+	// up and behind the primary header and is flush against the top edge
+	margin-top: calc( var(--_primary-header-ht) * (-1) );
+
+	width: 100vw;
+	min-height: 100vh;
+}
+
+.banner-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// The negative margin added to the banner-container leaves
+	// a gap at the bottom, hence increase the image height
+	// to fill it up
+	height: 112vh;
+	width: 100%;
+	background-color: #000;
 }

@@ -1,5 +1,12 @@
 @use '../abstracts/' as *;
 
+img.icon {
+	height: var(--icon-height);
+	width: auto;
+	object-fit: contain;
+	cursor: pointer;
+}
+
 .primary-header {
     // cannot use linear-gradient because transition does not work with this
     // --_bg: linear-gradient(
@@ -9,11 +16,12 @@
 	// 	hsl(var(--clr-accent-500))
 	// ); 
 
-    --_bg: hsl(var(--clr-secondary-600));
+    // --_bg: hsl(var(--clr-secondary-600));
+	--_bg: transparent,
 	--_logo-color: hsl(var(--clr-neutral-300));
 	--_nav-link-color: hsl(var(--clr-neutral-100));
 
-	padding: 0.5rem 1rem;
+	padding: var(--primary-header-topbot-padding) 1rem;
 	color: hsl(var(--clr-neutral-100));
 	background-color: var(--_bg);
 
@@ -23,9 +31,10 @@
 	position: sticky;
 	top: 0;
 
-    transition: background-color height 500ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
 }
 .primary-header.showMobile {
+	--_bg: hsl(var(--clr-secondary-600));
 	height: 100dvh;
 }
 
@@ -37,7 +46,13 @@
     //             hsl(var(--clr-secondary-600)));
     --_bg: hsl(var(--clr-primary-600));
 	--_nav-link-color: hsl(var(--clr-neutral-300));
+	--_nav-link-color-lite: rgba(255, 255, 255, 0.3);
 	--_logo-color: hsl(var(--clr-accent-400));
+	padding: 0 1rem;
+
+	&.showMobile {
+		padding: var(--primary-header-topbot-padding) 1rem 0;
+	}
 }
 
 .primary-header__inner {

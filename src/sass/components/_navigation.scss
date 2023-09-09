@@ -1,13 +1,19 @@
 @use '../abstracts/' as *;
 
+// Hide the mobile menu item checkboxes
+.m-menu-checkbox {
+    display: none;
+}
+
 .nav-deck { 
     display: flex;
     flex-direction: column;
-    gap: 1.25em;
+    gap: 1em;
     align-items: end;
     visibility: hidden;
 
     @include mq(medium) {
+        gap: 1.25em;
         visibility: visible;
     }
 }
@@ -17,6 +23,7 @@
     top: calc(var(--logo-height) + 2rem);
     left: 0;
     align-items: start;
+    width: 100%;
 }
 
 .nav-list {
@@ -31,7 +38,14 @@
         position: relative;
     }
 
-    li a {
+    li .nav-item {
+        cursor: default;
+        padding: 1px 0;
+    }
+
+    li .nav-item-name,
+    li .nav-item-name a {
+        text-transform: uppercase;
         color: var(--_nav-link-color);
         text-decoration: none;
         font-size: var(--fs-400);
@@ -40,15 +54,15 @@
         letter-spacing: var(--ls-wide);
     }
 
-    li a:hover,
-    li a:focus {
+    li .nav-item-name:hover,
+    li .nav-item-name:focus {
         opacity: 0.7;
     }
 
-    li a::before {
+    li .nav-item-name::before {
         content: '';
         position: absolute;
-        bottom: -2px;
+        bottom: -0.01rem;
         width: 100%;
         height: 1px;
         background-color: var(--_nav-link-color);
@@ -57,7 +71,7 @@
         transform-origin: right;
     }
 
-    li a:hover::before {
+    li .nav-item-name:hover::before {
         transform: scaleX(1);
         transform-origin: left;
     }
@@ -65,27 +79,133 @@
 .nav-deck.showMobile .nav-list {
     flex-direction: column;
 
+    @include mqmax(medium) {
+        width: 100%;
+        li {
+            padding: 0.5em 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .nav-item-name  {
+            display: flex;
+            justify-content: space-between;
+            // menu item name takes up 75% of width
+            :first-child {
+                width: 80%;
+            }
+            // chevron takes up remaining width
+            :not(:first-child) {
+                flex: 1;
+            }
+        }
+        label.item-chevron::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-color: var(--_nav-link-color);
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: 50%;
+            margin-top: -5px;
+            right: 12px;
+        }
+    }
+
+    // removing animated underline
+    li .nav-item-name::before {
+        content: none;
+    }
+}
+.nav-sublist {
+    z-index: 15;
+    list-style: none;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    
+    padding: 0.7rem;
+    position: absolute;
+    top: 1.79rem;
+    left: 0;
+    
+    background-color: hsl(var(--clr-neutral-800));
+    border: 1px solid hsl(var(--clr-neutral-400));
+    border-radius: 6px;
+
+    li, li a {
+        color: var(--_nav-link-color);
+        text-decoration: none;
+        font-size: var(--fs-200);
+        font-family: var(--ff-sans);
+        font-weight: var(--fw-light);
+        letter-spacing: var(--ls-wide);
+    }
+    li a:hover,
+    li a:focus {
+        opacity: 0.7;
+    }
     li a::before {
         content: none;
     }
 }
+li[data-link-active] {
+    .nav-sublist {
+        visibility: visible;
+        opacity: 1;
+    }
 
-img.mobileToggle {
-    height: var(--icon-height);
-    width: auto;
-    object-fit: contain;
-    cursor: pointer;
+    @include mqmax(medium) {
+        .nav-item {
+            z-index: 20;
+            position: fixed;
+            top: calc(var(--logo-height) + 2rem);
+            left: 0;
+            height: 100%;
+            width: 100vw;
+            background-color: var(--_bg);
+            padding-left: 1rem;
 
-    /* The search div containing the mag glass icon and x icon are at z-index 10*/
-    z-index: 11;
+            .nav-sublist {
+                left: 0;
+                gap: 2rem;
+                padding-left: 1rem;
+                padding-top: 2rem;
+                background-color: transparent;
+                border: none;
+            }
+        }
+    } 
+}
 
-    position: absolute;
-    right: 0;
-    align-self: center;
-
+.mobileToggleIcons {
+    .closeMobileBtn {
+        display: none;
+    }
     @include mq(medium) {
         display: none;
     }
+}
+.mobileToggleIcons>* {
+    /* The search div containing the mag glass icon and x icon are at z-index 10*/
+    z-index: 11;
+
+    // center both ham menu and close icons vertically
+    // and one on top of each other
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
 }
 img.mobileToggle.hide {
     display: none;

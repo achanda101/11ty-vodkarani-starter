@@ -4,14 +4,6 @@
     display: inline-flex;
     align-items: center;
     z-index: 10;
-    .icons {
-        img {
-            height: var(--icon-height);
-            width: auto;
-            object-fit: contain;
-            cursor: pointer;
-        }
-    }
 }
 .searchBox {
     position: absolute;

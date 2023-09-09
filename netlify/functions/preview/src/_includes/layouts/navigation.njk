@@ -1,27 +1,72 @@
 <div class="nav-deck">
     <ul class="nav-list">
         <li>
-            <a href="#">Home</a>
+            <div class="nav-item">
+                <span class="nav-item-name">
+                    <a href="/">Home</a>
+                </span>
+            </div>
+        </li>
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-2">Blog</label>
+                {# <span class="nav-item-name"><a href="/">Blog</a><label class="item-chevron" for="item-2"></label></span> #}
+                <input type="checkbox"
+                    id="item-2"
+                    name="item-2"
+                    class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="https://nytimes.com">Article 1</a>
+                    </li>
+                    <li>
+                        <a href="https://cnn.com">Article 2</a>
+                    </li>
+                    <li>
+                        <a href="https://google.com">Article 3</a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li>
-            <a href="#">Blog</a>
+            <div class="nav-item">
+                <span class="nav-item-name">About</span>
+            </div>
         </li>
         <li>
-            <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
+            <div class="nav-item">
+                <span class="nav-item-name">Contact</span>
+            </div>
         </li>
     </ul>
     <ul class="nav-list">
         <li>
-            <a href="#">Community</a>
+            <div class="nav-item">
+                <span class="nav-item-name">Community</span>
+            </div>
         </li>
-        <li>
-            <a href="#">Projects</a>
+
+        <li data-dropdown>
+            <div class="nav-item" data-dropdown-link>
+                <label class="nav-item-name item-chevron" for="item-6">Projects</label>
+                <input type="checkbox"
+                    id="item-6"
+                    name="item-6"
+                    class="m-menu-checkbox" />
+                <ul class="nav-sublist">
+                    <li>
+                        <a href="/">Covid Relief</a>
+                    </li>
+                    <li>Forest Farming</li>
+                    <li>Collective Commons</li>
+                </ul>
+            </div>
         </li>
+
         <li>
-            <a href="#">Media</a>
+            <div class="nav-item">
+                <span class="nav-item-name">Media</span>
+            </div>
         </li>
     </ul>
 </div>
