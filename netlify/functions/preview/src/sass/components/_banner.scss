@@ -1,0 +1,11 @@
+.banner-container .banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // The negative margin added to the banner-container leaves
+    // a gap at the bottom, hence increase the image height
+    // to fill it up
+    height: 112vh;
+    width: 100%;
+    background-color: #000;
+}

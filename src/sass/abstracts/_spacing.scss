@@ -1,6 +1,8 @@
 $spacer: 1em;
 $flow-spacer: 1em;
 $flow-spacer-top: 3.2em;
-$flow-spacer-bottom: 4em;
-$flow-spacer-nontext: 0.3em;
+$flow-spacer-bottom: 4.2em;
+$flow-spacer-nontext: 0.4em;
+// This is to compensate for the banner container having negative top margin
+$flow-spacer-compensate: 8vh;
 $gap: 1em;

@@ -11,14 +11,17 @@
     gap: 1em;
     align-items: end;
     visibility: hidden;
+    scale: 0;
 
     @include mq(medium) {
         gap: 1.25em;
         visibility: visible;
+        scale: 1;
     }
 }
 .nav-deck.showMobile {
     visibility: visible;
+    scale: 1;
     position: absolute;
     top: calc(var(--logo-height) + 2rem);
     left: 0;
@@ -135,7 +138,7 @@
     
     padding: 0.7rem;
     position: absolute;
-    top: 1.79rem;
+    top: 1.8rem;
     left: 0;
     
     background-color: hsl(var(--clr-neutral-800));

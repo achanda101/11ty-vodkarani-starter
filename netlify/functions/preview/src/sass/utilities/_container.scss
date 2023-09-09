@@ -15,6 +15,11 @@
 	}
 }
 
+.container:first-child>* {
+	// Add margin at top to compensate for the banner container having negative top margin
+	padding-top: 8vh;
+}
+
 .wrapper {
 	margin-inline: auto;
 	--width: 85vw;
@@ -45,16 +50,4 @@
 
 	width: 100vw;
 	min-height: 100vh;
-}
-
-.banner-image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	// The negative margin added to the banner-container leaves
-	// a gap at the bottom, hence increase the image height
-	// to fill it up
-	height: 112vh;
-	width: 100%;
-	background-color: #000;
 }
