@@ -6,7 +6,13 @@ eleventyNavigation:
 ---
 <div class="banner-container">
   <div class="banner-image">
-    {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647179355/Space-cat2-desk_rix0hl.jpg", "Damayanti", ["425", "768", "1600"] %}
+    {% pictures 
+      {"desk":"https://res.cloudinary.com/nrityagram/image/upload/v1647179355/Space-cat2-desk_rix0hl.jpg", 
+      "tab":"https://res.cloudinary.com/nrityagram/image/upload/v1620417697/ipad/08-dhruva-ipad_ppl3ra.jpg", 
+      "mob":"https://res.cloudinary.com/nrityagram/image/upload/v1582614660/mobile/9_s1ma2d.jpg"}, 
+      "Pictures Shortcode Test", 
+      {"mob": ["425"], "tab": ["768"], "desk":["1600"]}, {"desk":"65em", "tab":"50em", "mob":"35em"}, 
+      "eager", "high" %}
   </div>
 </div>
 <div class="container primary-bg">
@@ -25,12 +31,12 @@ eleventyNavigation:
     <div class="flow-nontext">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643804553/community_card_qpjn0w.jpg",
       "Children's Dance Class",
-      ["560", "auto"] %}
+      ["425", "768", "1600"] %}
     </div>
     <div class="flow-nontext">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643974833/Rasa_Card_Diksha_getq7i.jpg",
       "NG Forest",
-      ["560", "auto"] %}
+      ["425", "768", "1600"] %}
     </div>
   </div>
 </div>
@@ -50,7 +56,7 @@ eleventyNavigation:
     <div class="flow-nontext">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/v1620734207/school-card_m5avwv.jpg",
       "NG Utsarga",
-      ["560", "auto"] %}
+      ["425", "768", "1600"] %}
     </div>
     <h1>Section 3</h1>
     <p>

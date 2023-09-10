@@ -15,11 +15,6 @@
 	}
 }
 
-.container:first-child>* {
-	// Add margin at top to compensate for the banner container having negative top margin
-	padding-top: 8vh;
-}
-
 .wrapper {
 	margin-inline: auto;
 	--width: 85vw;
@@ -40,8 +35,8 @@
 }
 
 .banner-container {
-	--_primary-header-pad: calc(2 * var(--primary-header-topbot-padding));
-	--_primary-header-ht: calc(var(--logo-height) + var(var(--_primary-header-pad)))
+	// primary-header top and bottom padding = 0.5rem
+	--_primary-header-ht: calc(var(--logo-height) + 1rem);
 	position: relative;
 
 	// the negative margin pushes the banner
