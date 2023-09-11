@@ -31,7 +31,7 @@ module.exports = eleventyConfig => {
 
 		// console.log(JSON.stringify(metadata, null, 2));
 
-		// TODO loading=eager and fetchpriority=high
+		// TODO fetchpriority=high
 		let imageAttributes = {
 			alt,
 			sizes,

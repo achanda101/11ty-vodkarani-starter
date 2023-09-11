@@ -1,10 +1,10 @@
 ---
 layout: layouts/home.njk
 eleventyNavigation:
-  key: Home
+  key: Vanilla
   order: 1
 ---
-<div id="banner-container">
+<div class="banner-container">
   <div class="banner-image">
     {% pictures 
       {"desk":"https://res.cloudinary.com/nrityagram/image/upload/v1647179355/Space-cat2-desk_rix0hl.jpg", 
@@ -13,17 +13,6 @@ eleventyNavigation:
       "Pictures Shortcode Test", 
       {"mob": ["425"], "tab": ["768"], "desk":["1600"]}, {"desk":"65em", "tab":"50em", "mob":"35em"}, 
       "eager", "high" %}
-  </div>
-  <div class="banner-image-credit"
-    data-image-credit-desk="Surupa Sen" 
-    data-image-credit-tab="Sonia Manchanda" 
-    data-image-credit-mob="Karthik Venakataraman"
-    ></div>
-  <div class="banner-tagline">
-      “A selfless concentration and a depth that reflected their intensive training in dance, music, Literature language and Philosophy.”
-      <span class="banner-tagline-credit">
-          The New York Times
-      </span>
   </div>
 </div>
 <div class="container primary-bg">
