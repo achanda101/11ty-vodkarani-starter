@@ -12,7 +12,7 @@
 .banner-image-credit {
     position: absolute;
     writing-mode: vertical-rl;
-    font-size: var(--fs-100);
+    font-size: var(--fs-200);
     font-family: var(--ff-sans);
     color: hsl(var(--clr-neutral-100));
 
@@ -20,13 +20,18 @@
     bottom: 33vh;
 
     @include mq(medium) {
-        bottom: 20vh;
+        bottom: 2vh;
     }
 
     @include mq(large) {
         right: 15px;
         font-weight: var(--fw-light);
     }
+
+    opacity: 0;
+    // Fade-in the credit after the banner image loads
+    animation: fadeIn linear 25ms forwards;
+    animation-delay: 750ms;
 }
 
 .banner-image-credit::after {
@@ -41,10 +46,13 @@
     }
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 .banner-tagline {
     position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -68,4 +76,47 @@
 
 .banner-tagline-credit {
     font-size: var(--fs-300);
+}
+
+.banner-title {
+    position: absolute;
+    right: 8vw;
+    bottom: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 85vw;
+    text-align: right;
+
+    font-size: var(--fs-900);
+    line-height: 1.1em;
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
+
+    @include mq(medium) {
+        width: 50vw;
+        bottom: 8vh;
+    }
+
+    opacity: 0;
+    // Animation -- fade-in + translateY + ease-out
+    animation: fadeInBannerTitle ease-out 2s forwards;
+    animation-delay: 750ms;
+}
+
+@keyframes fadeInBannerTitle {
+    0% { 
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.banner-subtitle {
+    font-size: var(--fs-550); 
+    line-height: 0.75;
 }

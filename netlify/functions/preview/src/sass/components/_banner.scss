@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
-.banner-container .banner-image {
+#banner-container .banner-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
 .banner-image-credit {
     position: absolute;
     writing-mode: vertical-rl;
-    font-size: var(--fs-100);
+    font-size: var(--fs-200);
     font-family: var(--ff-sans);
     color: hsl(var(--clr-neutral-100));
 
@@ -20,7 +20,7 @@
     bottom: 33vh;
 
     @include mq(medium) {
-        bottom: 20vh;
+        bottom: 2vh;
     }
 
     @include mq(large) {
@@ -43,8 +43,6 @@
 
 .banner-tagline {
     position: absolute;
-    // left: 50%;
-    // transform: translateX(-50%);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -68,4 +66,31 @@
 
 .banner-tagline-credit {
     font-size: var(--fs-300);
+}
+
+.banner-title {
+    position: absolute;
+    right: 8vw;
+    bottom: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    width: 85vw;
+    text-align: right;
+
+    font-size: var(--fs-900);
+    line-height: 1.1em;
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-light);
+    color: hsl(var(--clr-neutral-100));
+
+    @include mq(medium) {
+        width: 50vw;
+        bottom: 8vh;
+    }
+}
+
+.banner-subtitle {
+    font-size: var(--fs-550); 
+    line-height: 0.75;
 }
