@@ -1,0 +1,108 @@
+/*
+ vanillaSlideshow v0.1
+ (c) Dimitri Mikadze
+ https://github.com/DimitriMikadze/vanilla-slideshow
+ License: MIT
+*/
+
+#vanilla-slideshow .vanilla-slide {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+#vanilla-slideshow .vanilla-slide.vanilla-active {
+    opacity: 1;
+}
+
+#vanilla-slideshow .vanilla-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Arrows */
+
+#vanilla-slideshow-previous {
+    position: absolute;
+    left: 10px;
+    top: 48%;
+    width: 28px;
+    height: 30px;
+    background-position: 0 100%;
+    cursor: pointer;
+    opacity: 0.2;
+    z-index: var(--fullscreen-slideshow-z-index);
+    // display: none;
+}
+
+#vanilla-slideshow-next {
+    position: absolute;
+    right: 10px;
+    top: 48%;
+    width: 28px;
+    height: 30px;
+    background-position: 100% 100%;
+    cursor: pointer;
+    opacity: 0.2;
+    z-index: var(--fullscreen-slideshow-z-index);
+    // display: none;
+}
+
+#vanilla-slideshow-previous:hover,
+#vanilla-slideshow-next:hover {
+    opacity: 1;
+}
+
+/* Indicators */
+
+#vanilla-indicators {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: var(--fullscreen-slideshow-z-index);
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+}
+
+.vanilla-indicators {
+    box-shadow: 0 0 5px #333333;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.vanilla-indicators.vanilla-active {
+    background-color: #dbdbdb;
+}
+
+@media screen and (max-width: 800px) {
+
+    #vanilla-slideshow-next,
+    #vanilla-slideshow-previous {
+        // position: absolute;
+        // top: 45%;
+        // width: 24px;
+        // height: 26px;
+        display: none;
+    }
+
+    // #vanilla-slideshow-previous {
+    // position: absolute;
+    // top: 45%;
+    // width: 24px;
+    // height: 26px;
+    // display: none;
+    // }
+}
