@@ -22,51 +22,85 @@
                     <li>
                         <a href="https://cnn.com">Article 2</a>
                     </li>
-                    <li>
-                        <a href="https://google.com">Article 3</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-        <li>
-            <div class="nav-item">
-                <span class="nav-item-name">About</span>
-            </div>
-        </li>
-        <li>
-            <div class="nav-item">
-                <span class="nav-item-name">Contact</span>
-            </div>
-        </li>
-    </ul>
-    <ul class="nav-list">
-        <li>
-            <div class="nav-item">
-                <span class="nav-item-name">Community</span>
-            </div>
-        </li>
+                    <li data-dropdown-lvl2 >
+                        <div class="nav-item-lvl2" data-dropdown-link>
+                            <label class="nav-item-name-lvl2 item-chevron" for="item-2-1">
+                                <a href="https://google.com">Article 3</a>
+                            </label>
+                            <input type="checkbox"
+                                id="item-2-1"
+                                name="item-2-1"
+                                class="m-menu-checkbox" />
+                            <ul class="nav-sublist-lvl2">
+                                <li>
+                                    <a href="/">Sub Article 3-1</a>
+                                </li>
+                                <li>
+                                    <a href="/">Sub Article 3-2</a>
+                                </li>
+                            </ul>
 
-        <li data-dropdown>
-            <div class="nav-item" data-dropdown-link>
-                <label class="nav-item-name item-chevron" for="item-6">Projects</label>
-                <input type="checkbox"
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="nav-item">
+                    <span class="nav-item-name">About</span>
+                </div>
+            </li>
+            <li>
+                <div class="nav-item">
+                    <span class="nav-item-name">Contact</span>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav-list">
+            <li>
+                <div class="nav-item">
+                    <span class="nav-item-name">Community</span>
+                </div>
+            </li>
+
+            <li data-dropdown>
+                <div class="nav-item" data-dropdown-link>
+                    <label class="nav-item-name item-chevron" for="item-6">Projects</label>
+                    <input type="checkbox"
                     id="item-6"
                     name="item-6"
                     class="m-menu-checkbox" />
-                <ul class="nav-sublist">
-                    <li>
-                        <a href="/">Covid Relief</a>
-                    </li>
-                    <li>Forest Farming</li>
-                    <li>Collective Commons</li>
-                </ul>
-            </div>
-        </li>
+                    <ul class="nav-sublist">
+                        <li>
+                            <a href="/">Covid Relief</a>
+                        </li>
+                        <li data-dropdown-lvl2 >
+                            <div class="nav-item-lvl2" data-dropdown-link>
+                                <label class="nav-item-name-lvl2 item-chevron" for="item-6-1">
+                                    <a href="/">Forest Farming</a>
+                                </label>
+                                <input type="checkbox"
+                                id="item-6-1"
+                                name="item-6-1"
+                                class="m-menu-checkbox" />
+                                <ul class="nav-sublist-lvl2">
+                                    <li>
+                                        <a href="/">Soil Preparation</a>
+                                    </li>
+                                    <li>
+                                        <a href="/">Irrigation</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>Collective Commons</li>
+                    </ul>
+                </div>
+            </li>
 
-        <li>
-            <div class="nav-item">
-                <span class="nav-item-name">Media</span>
-            </div>
-        </li>
-    </ul>
-</div>
+            <li>
+                <div class="nav-item">
+                    <span class="nav-item-name">Media</span>
+                </div>
+            </li>
+        </ul>
+    </div>

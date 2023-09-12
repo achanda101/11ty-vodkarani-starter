@@ -58,7 +58,9 @@
     }
 
     li .nav-item-name:hover,
-    li .nav-item-name:focus {
+    li .nav-item-name-lvl2:hover,
+    li .nav-item-name:focus,
+    li .nav-item-name-lvl2:focus {
         opacity: 0.7;
     }
 
@@ -88,7 +90,7 @@
             padding: 0.5em 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .nav-item-name  {
+        .nav-item-name, .nav-item-name-lvl2  {
             display: flex;
             justify-content: space-between;
             // menu item name takes up 75% of width
@@ -161,17 +163,23 @@
         content: none;
     }
 }
+.nav-sublist-lvl2 {
+    scale: 1;
+}
+
 li[data-link-active] {
     .nav-sublist {
         visibility: visible;
         opacity: 1;
     }
 
+    // for mobile only
     @include mqmax(medium) {
         .nav-item {
             z-index: 20;
             position: fixed;
-            top: calc(var(--logo-height) + 2rem);
+            // top: calc(var(--logo-height) + 2rem);
+            top: 0;
             left: 0;
             height: 100%;
             width: 100vw;
@@ -185,15 +193,50 @@ li[data-link-active] {
                 padding-top: 2rem;
                 background-color: transparent;
                 border: none;
+
+                .nav-sublist-lvl2 {
+                    scale: 0;
+                }
+            
+                li[data-link-active-lvl2] {
+                    .nav-sublist-lvl2 {
+                        scale: 1;
+                    }
+                }
             }
         }
     } 
 }
+li[data-link-active-lvl2] {
+    // for mobile only
+    @include mqmax(medium) {
+        .nav-item-lvl2 {
+            z-index: 25;
+            position: fixed;
+            // top: calc(var(--logo-height) + 2rem);
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100vw;
+            background-color: var(--_bg);
+            padding-left: 1rem;
+
+            .nav-sublist-lvl2 {
+                left: 0;
+                gap: 2rem;
+                padding-left: 1rem;
+                padding-top: 2rem;
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+}
 
 .mobileToggleIcons {
-    .closeMobileBtn {
-        display: none;
-    }
+    // .closeMobileBtn {
+    //     display: none;
+    // }
     @include mq(medium) {
         display: none;
     }
@@ -210,7 +253,7 @@ li[data-link-active] {
     bottom: 0;
     margin: auto 0;
 }
-img.mobileToggle.hide {
+img.icon.hide {
     display: none;
 }
 

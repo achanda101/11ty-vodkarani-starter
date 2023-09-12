@@ -27,6 +27,11 @@
         right: 15px;
         font-weight: var(--fw-light);
     }
+
+    opacity: 0;
+    // Fade-in the credit after the banner image loads
+    animation: fadeIn linear 25ms forwards;
+    animation-delay: 750ms;
 }
 
 .banner-image-credit::after {
@@ -39,6 +44,11 @@
     @include mq(large) {
         content: 'Photo Credit: ' attr(data-image-credit-desk);
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .banner-tagline {
@@ -87,6 +97,22 @@
     @include mq(medium) {
         width: 50vw;
         bottom: 8vh;
+    }
+
+    opacity: 0;
+    // Animation -- fade-in + translateY + ease-out
+    animation: fadeInBannerTitle ease-out 2s forwards;
+    animation-delay: 750ms;
+}
+
+@keyframes fadeInBannerTitle {
+    0% { 
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0%);
     }
 }
 
