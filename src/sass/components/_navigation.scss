@@ -8,7 +8,7 @@
 .nav-deck { 
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.25em;
     align-items: end;
     visibility: hidden;
     scale: 0;
@@ -23,7 +23,7 @@
     visibility: visible;
     scale: 1;
     position: absolute;
-    top: calc(var(--logo-height) + 2rem);
+    top: calc(var(--logo-height) + 1.5rem);
     left: 0;
     align-items: start;
     width: 100%;
@@ -36,6 +36,9 @@
 
     display: flex;
     gap: clamp(0.5rem, 5vw, 2rem);
+    @include mqmax(medium) {
+        gap: 0.25em;
+    }
 
     li {
         position: relative;
@@ -55,6 +58,9 @@
         font-family: var(--ff-sans);
         font-weight: var(--fw-light);
         letter-spacing: var(--ls-wide);
+        @include mqmax(medium) {
+            font-weight: var(--fw-normal);
+        }
     }
 
     li .nav-item-name:hover,
@@ -90,7 +96,7 @@
             padding: 0.5em 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .nav-item-name, .nav-item-name-lvl2  {
+        .nav-item-name  {
             display: flex;
             justify-content: space-between;
             // menu item name takes up 75% of width
@@ -162,9 +168,35 @@
     li a::before {
         content: none;
     }
+
+    @include mqmax(medium) {
+        li, li a {
+            font-weight: var(--fw-normal) !important;
+        }
+        .nav-item-name-lvl2 { 
+            a {
+                font-weight: var(--fw-normal) !important;
+            }
+            width: 80vw;
+            display: flex;
+            justify-content: space-between;
+
+            // menu item name takes up 75% of width
+            :first-child {
+                width: 80%;
+            }
+
+            // chevron takes up remaining width
+            :not(:first-child) {
+                flex: 1;
+            }
+        }
+    }
 }
 .nav-sublist-lvl2 {
-    scale: 1;
+    display: block;
+    list-style: none;
+    padding-left: 1rem;
 }
 
 li[data-link-active] {
@@ -184,23 +216,23 @@ li[data-link-active] {
             height: 100%;
             width: 100vw;
             background-color: var(--_bg);
-            padding-left: 1rem;
+            padding-left: 0;
 
             .nav-sublist {
                 left: 0;
                 gap: 2rem;
-                padding-left: 1rem;
+                padding-left: 0;
                 padding-top: 2rem;
                 background-color: transparent;
                 border: none;
 
                 .nav-sublist-lvl2 {
-                    scale: 0;
+                    display: none;
                 }
             
                 li[data-link-active-lvl2] {
                     .nav-sublist-lvl2 {
-                        scale: 1;
+                        display: block;
                     }
                 }
             }
@@ -208,23 +240,32 @@ li[data-link-active] {
     } 
 }
 li[data-link-active-lvl2] {
+    li {
+        border: none !important;
+    }
     // for mobile only
     @include mqmax(medium) {
         .nav-item-lvl2 {
             z-index: 25;
             position: fixed;
-            // top: calc(var(--logo-height) + 2rem);
             top: 0;
             left: 0;
             height: 100%;
             width: 100vw;
             background-color: var(--_bg);
-            padding-left: 1rem;
+            padding-left: 0;
+
+            .nav-item-name-lvl2 a {
+                text-transform: uppercase;
+                font-size: var(--fs-400);
+                font-weight: var(--fw-normal);
+                letter-spacing: var(--ls-wide);
+            }
 
             .nav-sublist-lvl2 {
                 left: 0;
                 gap: 2rem;
-                padding-left: 1rem;
+                padding-left: 0;
                 padding-top: 2rem;
                 background-color: transparent;
                 border: none;
