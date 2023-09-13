@@ -1,6 +1,7 @@
 .grid {
 	display: grid;
-	gap: var(--gap, var(--spacer));
+	// var(--custom-prop, var(--default-value))
+	gap: var(--column-gap, var(--spacer));
 }
 
 // @mixin grid($align: start, $justify: between) {

@@ -1,11 +1,116 @@
 @use 'grid' as *;
 @use '../abstracts/' as *;
 
-.even-columns {
+.left-column {
+    grid-area: leftcol;
+}
+.right-column {
+    grid-area: rightcol;
+}
+.narrow-column {
+    grid-area: narrowcol;
+}
+.wide-column {
+    grid-area: widecol;
+}
+
+
+.even-columns-unlimited {
     @extend .grid;
 
     @include mq(medium) {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }
+}
+
+.even-columns {
+    @extend .grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+            "leftcol"
+            "rightcol";
+
+    @include mq(medium) {
+        grid-template-areas:
+            "leftcol rightcol";
+    }
+
+    &.reverse {
+        // mobile
+        @include mqmax(medium) {
+            grid-template-areas:
+                "rightcol"
+                "leftcol";
+        }
+    }
+}
+
+
+.uneven-columns {
+    @extend .grid;
+
+    // narrow | wide columns
+    &.narrow-wide {
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+            "narrowcol"
+            "widecol";
+
+        @include mq(medium) {
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-areas:
+                "narrowcol widecol";
+        }
+        &.reverse {
+            // mobile
+            @include mqmax(medium) {
+                grid-template-areas:
+                    "widecol"
+                    "narrowcol";
+            }
+        }
+    }
+    // wide | narrow columns
+    &.wide-narrow {
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+            "widecol"
+            "narrowcol";
+    
+        @include mq(medium) {
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-areas:
+                "widecol narrowcol";
+        }
+    
+        &.reverse {
+            // mobile
+            @include mqmax(medium) {
+                grid-template-areas:
+                    "narrowcol"
+                    "widecol";
+            }
+        }
+    }
+}
+
+.left-align-column {
+    text-align: left;
+}
+
+.right-align-column {
+    text-align: right;
+}
+
+.bottom-align-column {
+    align-self: end;
+}
+
+.top-align-column {
+    align-self: start;
+}
+
+.center-align-column {
+    align-self: center;
 }

@@ -4,15 +4,18 @@
 	width: 100%;
 
 	background-color: transparent;
-	&.primary-bg {
-		background-color: hsl(var(--clr-primary-100));
-	}
-	&.secondary-bg {
-		background-color: hsl(var(--clr-secondary-100));
-	}
-	&.accent-bg {
-		background-color: hsl(var(--clr-accent-550));
-	}
+}
+
+.primary-bg {
+	background-color: hsl(var(--clr-primary-100));
+}
+
+.secondary-bg {
+	background-color: hsl(var(--clr-secondary-100));
+}
+
+.accent-bg {
+	background-color: hsl(var(--clr-accent-550));
 }
 
 .wrapper {

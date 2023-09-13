@@ -1,6 +1,6 @@
 .flex {
     display: flex;
-    gap: var(--gap, var(--spacer));
+    gap: var(--column-gap, var(--spacer));
 }
 
 @mixin flex($align: center, $justify: between) {

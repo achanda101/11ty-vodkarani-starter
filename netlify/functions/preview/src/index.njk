@@ -31,6 +31,54 @@ eleventyNavigation:
       </span>
   </div> #}
 </div>
+<div class="container">
+  <div class="wrapper flow">
+    <div class="even-columns reverse">
+      <div class="primary-bg left-column right-align-column">
+        <h3>“In creating,<br>
+          sharing,<br>
+          and experiencing<br>
+          our collective humanity<br>
+          through our art,<br>
+          we end up<br>
+          holding hands<br>
+          with each other.”</h3>
+      </div>
+      <div class="secondary-bg right-column">
+        <p>
+          Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px.
+        </p>
+        <p>
+          A variable declaration looks a lot like a property declaration: it’s written. Unlike a property, which can only be declared in a style rule or at-rule, variables can be declared anywhere you want. To use a variable, just include it in a value.
+        </p>
+        <p>
+          Normally when you assign a value to a variable, if that variable already had a value, its old value is overwritten. But if you’re writing a Sass library, you might want to allow your users to configure your library’s variables before you use them to generate CSS.
+        </p>
+        <p>
+          To make this possible, Sass provides the !default flag. This assigns a value to a variable only if that variable isn’t defined or its value is null. Otherwise, the existing value will be used. Variables defined with !default can be configured when loading a module with the @use rule. Sass libraries often use !default variables to allow their users to configure the library’s CSS.
+        </p>
+      </div>
+    </div>
+    <div class="uneven-columns narrow-wide reverse">
+      <div class="primary-bg narrow-column bottom-align-column">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647158192/Aishani_Sq_sql50y.jpg",
+        "Children's Dance Class",
+        ["425", "768", "1600"] %}
+      </div>
+      <div class="secondary-bg wide-column left-align-column bottom-align-column">
+        <h3>“In creating,<br>
+          sharing,<br>
+          and experiencing<br>
+          our collective humanity<br>
+          through our art,<br>
+          we end up<br>
+          holding hands<br>
+          with each other.”</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container primary-bg">
   <div class="wrapper flow">
     <h1>Section 1</h1>
@@ -44,21 +92,24 @@ eleventyNavigation:
 		veritatis sapiente hic, rerum molestias dolore, delectus praesentium illum ea beatae? Expedita exercitationem
 		deleniti voluptatibus obcaecati?
 	</p>
-    <div class="flow-nontext">
+    <div class="flow-nontitletext">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643804553/community_card_qpjn0w.jpg",
       "Children's Dance Class",
       ["425", "768", "1600"] %}
     </div>
-    <div class="flow-nontext">
+    <div class="flow-nontitletext">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643974833/Rasa_Card_Diksha_getq7i.jpg",
       "NG Forest",
       ["425", "768", "1600"] %}
     </div>
+    <p>
+      Sass variables are simple: you assign a value to a name that begins with $, and then you can refer to that name instead of the value itself. But despite their simplicity, they’re one of the most useful tools Sass brings to the table. Variables make it possible to reduce repetition, do complex math, configure libraries, and much more.
+    </p>
   </div>
 </div>
 <div class="container accent-bg">
   <div class="wrapper flow">
-    <h1 class="text-neutral-100">Section 2</h1>
+    <h2 class="text-neutral-100">Section 2</h2>
     <p class="text-neutral-100">
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officia a, unde sed soluta mollitia assumenda in
 		vel earum explicabo sunt, odio cupiditate asperiores debitis iste voluptatum doloremque exercitationem magnam. Lorem
@@ -69,12 +120,12 @@ eleventyNavigation:
 </div>
 <div class="container">
   <div class="wrapper flow">
-    <div class="flow-nontext">
+    <div class="flow-nontitletext">
       {% image "https://res.cloudinary.com/nrityagram/image/upload/v1620734207/school-card_m5avwv.jpg",
       "NG Utsarga",
       ["425", "768", "1600"] %}
     </div>
-    <h1>Section 3</h1>
+    <h2>Section 3</h2>
     <p>
 		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis consequuntur, iste voluptatem natus dolorem
 		veritatis sapiente hic, rerum molestias dolore, delectus praesentium illum ea beatae? Expedita exercitationem
