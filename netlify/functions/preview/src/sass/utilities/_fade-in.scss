@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30%);
+    transition: all 500ms ease-out;
+
+    @include mq(medium) {
+        &.stickybit {
+            position: sticky;
+            // does not hide sticky part under the navbar on scroll 
+            top: calc(var(--logo-height-sticking) + 2rem); 
+        }
+    }
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+
+[data-fadein-watcher] {
+    height: 0;
+}

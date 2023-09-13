@@ -1,16 +1,25 @@
 @use 'grid' as *;
+@use 'flow' as *;
 @use '../abstracts/' as *;
 
 .left-column {
+    @extend .flow;
+    @extend .flow-flushbottom;
     grid-area: leftcol;
 }
 .right-column {
+    @extend .flow;
+    @extend .flow-flushbottom;
     grid-area: rightcol;
 }
 .narrow-column {
+    @extend .flow;
+    @extend .flow-flushbottom;
     grid-area: narrowcol;
 }
 .wide-column {
+    @extend .flow;
+    @extend .flow-flushbottom;
     grid-area: widecol;
 }
 
@@ -93,7 +102,6 @@
             }
         }
     }
-    
 }
 
 .left-align-column {

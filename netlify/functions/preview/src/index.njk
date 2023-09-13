@@ -33,23 +33,41 @@ eleventyNavigation:
 </div>
 <div class="container">
   <div class="wrapper flow">
-    <div class="even-columns reverse">
+    <div class="even-columns">
       <div class="primary-bg left-column right-align-column">
-        <h3>“In creating,<br>
-          sharing,<br>
-          and experiencing<br>
-          our collective humanity<br>
-          through our art,<br>
-          we end up<br>
-          holding hands<br>
-          with each other.”</h3>
+        <div class="fade-in stickybit">
+          <h3>“In creating,<br>
+            sharing,<br>
+            and experiencing<br>
+            our collective humanity<br>
+            through our art,<br>
+            we end up<br>
+            holding hands<br>
+            with each other.”</h3>
+        </div>
+        {# TODO: Multiple stickybits don't work, they don't stick to the top of the column #}
+        {# <div class="fade-in stickybit">
+          <h3>
+            I believe<br>
+            in miracles!<br>
+            And though<br>
+            there are moments<br>
+            when dark clouds<br>
+            pass overhead,<br>
+            I am convinced<br>
+            that everything<br>
+            Nrityagram needs,<br>
+            will come to it.”
+          </h3>
+        </div> #}
       </div>
-      <div class="secondary-bg right-column">
+      <div class="secondary-bg right-column flow-flushtop">
         <p>
-          Sometimes the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px.
+          Sometimes
+          the total size of your grid might be less than the size of its grid container. This could happen if all of your grid items are sized with non-flexible units like px.
         </p>
         <p>
-          A variable declaration looks a lot like a property declaration: it’s written. Unlike a property, which can only be declared in a style rule or at-rule, variables can be declared anywhere you want. To use a variable, just include it in a value.
+          <span class="fadeinTrigger">A variable</span> declaration looks a lot like a property declaration: it’s written. Unlike a property, which can only be declared in a style rule or at-rule, variables can be declared anywhere you want. To use a variable, just include it in a value.
         </p>
         <p>
           Normally when you assign a value to a variable, if that variable already had a value, its old value is overwritten. But if you’re writing a Sass library, you might want to allow your users to configure your library’s variables before you use them to generate CSS.
@@ -57,15 +75,23 @@ eleventyNavigation:
         <p>
           To make this possible, Sass provides the !default flag. This assigns a value to a variable only if that variable isn’t defined or its value is null. Otherwise, the existing value will be used. Variables defined with !default can be configured when loading a module with the @use rule. Sass libraries often use !default variables to allow their users to configure the library’s CSS.
         </p>
+        <p>
+          To round off this set of guides to CSS Grid Layout, we're going to walk through a few different layouts, which demonstrate some of the different techniques you can use when designing with grid layout. We will look at an example using grid-template-areas, a typical 12-column flexible grid system, and also a product listing using auto-placement. As you can see from this set of examples, there is often more than one way to achieve the result you want with grid layout. Choose the method you find most helpful for the problems that you are solving and the designs that you need to implement.
+        </p>
+        <p>
+          This will not create any layout, however the items now have names we can use to do so. Staying outside of any media queries we're now going to set up the layout for the mobile width. Here we're keeping everything in source order, trying to avoid any disconnect between the source and display as described in the guide Grid layout and accessibility. We've not defined any column or row tracks but this layout dictates a single column, and rows will be created as needed for each of the items in the implicit grid.
+        </p>
       </div>
     </div>
     <div class="uneven-columns narrow-wide reverse">
-      <div class="primary-bg narrow-column bottom-align-column">
-        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647158192/Aishani_Sq_sql50y.jpg",
-        "Children's Dance Class",
-        ["425", "768", "1600"] %}
+      <div class="primary-bg narrow-column">
+        <div class="fade-in stickybit">
+          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647158192/Aishani_Sq_sql50y.jpg",
+          "Children's Dance Class",
+          ["425", "768", "1600"] %}
+        </div>
       </div>
-      <div class="secondary-bg wide-column left-align-column bottom-align-column">
+      <div class="secondary-bg wide-column left-align-column bottom-align-column flow-flushtop">
         <h3>“In creating,<br>
           sharing,<br>
           and experiencing<br>
@@ -74,6 +100,12 @@ eleventyNavigation:
           we end up<br>
           holding hands<br>
           with each other.”</h3>
+        <p>
+          <span class="fadeinTrigger">To round off</span> this set of guides to CSS Grid Layout, we're going to walk through a few different layouts, which demonstrate some of the different techniques you can use when designing with grid layout. We will look at an example using grid-template-areas, a typical 12-column flexible grid system, and also a product listing using auto-placement. As you can see from this set of examples, there is often more than one way to achieve the result you want with grid layout. Choose the method you find most helpful for the problems that you are solving and the designs that you need to implement.
+        </p>
+        <p>
+          This will not create any layout, however the items now have names we can use to do so. Staying outside of any media queries we're now going to set up the layout for the mobile width. Here we're keeping everything in source order, trying to avoid any disconnect between the source and display as described in the guide Grid layout and accessibility. We've not defined any column or row tracks but this layout dictates a single column, and rows will be created as needed for each of the items in the implicit grid.
+        </p>
       </div>
     </div>
   </div>
