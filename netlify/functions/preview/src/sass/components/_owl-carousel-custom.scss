@@ -56,9 +56,10 @@
     .owl-next,
     .owl-prev {
         z-index: 10;
-        margin-top: -40px;
         position: absolute;
-        top: 45%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
 
         i {
             font-size: 1.2em;
@@ -68,11 +69,11 @@
     }
 
     .owl-prev {
-        left: 14px;
+        left: 30px;
     }
 
     .owl-next {
-        right: 14px;
+        right: 30px;
     }
 }
 
@@ -85,6 +86,17 @@ button.owl-prev {
     background: transparent !important;
     width: -moz-fit-content !important;
     width: -webkit-fit-content !important;
+}
+
+button.owl-dot span {
+    // width: 6px;
+    // height: 6px;
+    background-color: transparent !important;
+    border: 1px solid hsl(var(--clr-neutral-250));
+}
+button.owl-dot.active span {
+    border: none;
+    background: hsl(var(--clr-neutral-250)) !important;
 }
 
 //  Desktop

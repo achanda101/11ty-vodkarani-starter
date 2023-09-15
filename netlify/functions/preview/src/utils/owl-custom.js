@@ -5,10 +5,15 @@ $(document).ready(function () {
     margin: 0,
     nav: true,
     center: true,
-    dots: true,
+    dots: false,
     smartSpeed: 500,
     lazyLoadEager: 1,
-    
+    onInitialized: function (event) {
+      // apply aria-label info to next and previous buttons and make them focusable
+        $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
+        $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label','Next Slide');
+        $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex','0');
+    },
     navText: [
       '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-left-2_bta3sl.png" alt="left arrow">',
       '<img src="https://res.cloudinary.com/nrityagram/image/upload/v1646318418/chevron-right-2_dped9m.png" alt="right arrow">',
@@ -94,7 +99,13 @@ $(document).ready(function() {
     autoplay: false,
     dots: true,
     loop: true,
-    responsiveRefreshRate : 200,
+    responsiveRefreshRate: 200,
+    onInitialized: function (event) {
+      // apply aria-label info to next and previous buttons and make them focusable
+        $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
+        $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label','Next Slide');
+        $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex','0');
+    },
 
   }).on('changed.owl.carousel', syncPosition);
 
@@ -108,7 +119,13 @@ $(document).ready(function() {
     nav: false,
     smartSpeed: 200,
     slideSpeed : 500,
-    responsiveRefreshRate : 100
+    responsiveRefreshRate: 100,
+    onInitialized: function (event) {
+      // apply aria-label info to next and previous buttons and make them focusable
+        $('.owl-carousel.ultra-wide').find('.owl-prev').attr('aria-label','Previous Slide');
+        $('.owl-carousel.ultra-wide').find('.owl-next').attr('aria-label','Next Slide');
+        $('.owl-carousel.ultra-wide, .owl-prev, .owl-next').attr('tabindex','0');
+    },
   }).on('changed.owl.carousel', syncPosition2);
 
   function syncPosition(el) {
