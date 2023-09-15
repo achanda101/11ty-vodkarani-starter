@@ -21,8 +21,9 @@
 .wrapper {
 	margin-inline: auto;
 	--width: 85vw;
+	
 	@include mq(medium) {
-		--width: 65vw;
+		--width: 65vw;		
 	}
 
 	@include mq(large) {

@@ -3,17 +3,22 @@
 .logo {
     flex-grow: 1;
     align-self: center;
-    height: var(--logo-height);
-    transition: height 500ms;
+    // height: var(--logo-height);
+    // transition: height 500ms;
 
     img {
+            height: var(--logo-height);
             width: auto;
             object-fit: contain;
+            transition: height 500ms;
         }
 }
 
 .logo.sticking {
-    height: var(--logo-height-sticking);
+    // height: var(--logo-height-sticking);
+    img {
+        height: var(--logo-height-sticking);
+    }
 }
 
 .logo {

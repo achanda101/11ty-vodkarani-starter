@@ -2,6 +2,7 @@
 @use 'flow' as *;
 @use '../abstracts/' as *;
 
+
 .left-column {
     @extend .flow;
     @extend .flow-flushbottom;
@@ -61,13 +62,13 @@
 
     // narrow | wide columns
     &.narrow-wide {
-        grid-auto-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
             "narrowcol"
             "widecol";
 
-        @include mq(medium) {
-            grid-template-columns: 1fr 1.5fr;
+        @include mq(medium) { 
+            grid-template-columns: 35% 65%;
             grid-template-areas:
                 "narrowcol widecol";
         }
@@ -82,13 +83,13 @@
     }
     // wide | narrow columns
     &.wide-narrow {
-        grid-auto-columns: 1fr;
+        grid-auto-columns: 100%;
         grid-template-areas:
             "widecol"
             "narrowcol";
     
         @include mq(medium) {
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 65% 35%;
             grid-template-areas:
                 "widecol narrowcol";
         }

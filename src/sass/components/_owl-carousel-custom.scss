@@ -1,0 +1,138 @@
+@use '../abstracts/' as *;
+
+.owl-carousel.ultra-wide {
+    .item {
+        // filter: grayscale(0);
+        opacity: 1;
+        margin: 0;
+        transform: scale(1);
+        transition: 0.75s ease all;
+        position: relative;
+        height: fit-content;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        &.rounded {
+            border-radius: 12px;
+            overflow: hidden;
+            @include mqmax(medium) {
+                border-radius: 0;
+            }
+        }
+
+        .photo-credit {
+            font-size: var(--fs-200);
+            font-family: var(--ff-sans);
+            color: #fff;
+            writing-mode: vertical-rl;
+            position: absolute;
+            bottom: 30px;
+            right: 1px;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .photo-caption {
+            color: #fff;
+            font-size: var(--medium-fontsize);
+            font-family: var(--serif-font-family);
+            position: absolute;
+            bottom: 10px;
+            left: 50.25%;
+            transform: translateX(-50%);
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+.owl-carousel.ultra-wide {
+    .active.center .item {
+        filter: brightness(100%);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.owl-theme .owl-nav {
+    margin-top: 0;
+}
+
+.owl-next,
+.owl-prev {
+    z-index: 10;
+    margin-top: -40px;
+    position: absolute;
+    top: 45%;
+
+    i {
+        font-size: 1.2em;
+        color: rgba(200, 200, 200, 0.8);
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+.owl-prev {
+    left: 14px;
+}
+
+.owl-next {
+    right: 14px;
+}
+
+button.owl-next,
+button.owl-prev {
+    background: transparent !important;
+    width: -moz-fit-content !important;
+    width: -webkit-fit-content !important;
+}
+
+//  Desktop
+@include mq(medium) {
+    .owl-carousel.ultra-wide {
+        .item {
+            opacity: 1;
+            filter: brightness(25%);
+            margin: 0;
+            padding: 0;
+            transform: scale(0.8);
+            transition: 1.25s ease all;
+
+            .photo-credit {
+                font-size: calc(0.3em + 0.5vw);
+            }
+        }
+    }
+
+    .owl-next,
+    .owl-prev {
+        top: 45%;
+    }
+
+    .owl-prev {
+        left: 2vw;
+    }
+
+    .owl-next {
+        right: 2vw;
+    }
+}
+
+@include mq(large) {
+    // .owl-next,
+    // .owl-prev {
+    //   i {
+    //     font-size: 1.75em;
+    //   }
+    // }
+
+    .owl-prev {
+        left: 4vw;
+    }
+
+    .owl-next {
+        right: 4vw;
+    }
+}

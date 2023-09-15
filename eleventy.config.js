@@ -15,6 +15,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('img');
 	// Copy the `utils` folder to the output
 	eleventyConfig.addPassthroughCopy('./src/utils');
+	// Copy the `css` folder to the output
+	eleventyConfig.addPassthroughCopy('./src/css');
 
 	// Watch CSS files for changes
 	// Refresh the browser when your CSS changes,

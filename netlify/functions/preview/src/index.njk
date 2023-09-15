@@ -3,6 +3,7 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 1
+slider: true
 ---
 <div id="banner-container">
   <div class="banner-image">
@@ -86,9 +87,11 @@ eleventyNavigation:
     <div class="uneven-columns narrow-wide reverse">
       <div class="primary-bg narrow-column">
         <div class="fade-in stickybit">
-          {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647158192/Aishani_Sq_sql50y.jpg",
-          "Children's Dance Class",
-          ["425", "768", "1600"] %}
+          <div class="image-plus">
+            {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647158192/Aishani_Sq_sql50y.jpg",
+            "Children's Dance Class",
+            ["425", "768", "1600"] %}
+          </div>
         </div>
       </div>
       <div class="secondary-bg wide-column left-align-column bottom-align-column flow-flushtop">
@@ -111,6 +114,54 @@ eleventyNavigation:
   </div>
 </div>
 
+<!--TODO: To convert portrait to landscape for sliders -->
+<!-- add the following after upload/ in the cloudinary URL -->
+<!-- h_1.0,ar_1046:618,c_pad,b_rgb:000 -->
+
+<div class="container accent-bg">
+  <div class="flow">
+    <div class="owl-carousel ultra-wide owl-theme">
+      <div class="item rounded">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647085632/VO_03_dmnid0.jpg",
+        "Children's Dance Class",
+        ["auto", "425", "768", "1600"] %}
+        <div class="photo-credit">Photo : Shalini Jain</div>
+      </div>
+      <div class="item rounded">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647085632/VO_05_vo4sqp.jpg",
+        "Children's Dance Class",
+        ["auto", "425", "768", "1600"] %}
+        <div class="photo-credit">Photo : Ravi Shankar</div>
+      </div>
+      <div class="item rounded">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647085632/VO_02_eypf9j.jpg",
+        "Children's Dance Class",
+        ["auto", "425", "768", "1600"] %}
+        <div class="photo-credit">Photo : M Srinivas Murthy</div>
+      </div>
+      <div class="item rounded">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647085632/VO_06_fa0vmw.jpg",
+        "Children's Dance Class",
+        ["auto", "425", "768", "1600"] %}
+        <div class="photo-credit">Photo : Shalini Jain</div>
+      </div>
+      <div class="item rounded">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1647085632/VO_01_wjxg3k.jpg",
+        "Children's Dance Class",
+        ["auto", "425", "768", "1600"] %}
+        <div class="photo-credit">Photo : Ravi Shankar</div>
+      </div>
+      <!-- Portrait Image -->
+      <div class="item rounded">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/h_1.0,ar_1046:618,c_pad,b_rgb:000/v1647091227/Surupa_Sen_10_Photo_Credit_Karthik_Venkatraman_apynl1.jpg",
+        "Children's Dance Class",
+        ["auto", "425", "768", "1600"] %}
+        <div class="photo-credit">Photo : Karthik Venkataraman</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container primary-bg">
   <div class="wrapper flow">
     <h1>Section 1</h1>
@@ -125,14 +176,20 @@ eleventyNavigation:
 		deleniti voluptatibus obcaecati?
 	</p>
     <div class="flow-nontitletext">
-      {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643804553/community_card_qpjn0w.jpg",
-      "Children's Dance Class",
-      ["425", "768", "1600"] %}
+      <div class="image-plus">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1656312213/ajji-abhishek1_vjiatt.jpg",
+        "Children's Dance Class",
+        ["560", "768", "1046"] %}
+        <div class="credit" data-image-credit="Pavithra Reddy" ></div>
+      </div>
     </div>
     <div class="flow-nontitletext">
-      {% image "https://res.cloudinary.com/nrityagram/image/upload/v1643974833/Rasa_Card_Diksha_getq7i.jpg",
-      "NG Forest",
-      ["425", "768", "1600"] %}
+      <div class="image-plus">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1646905793/peepul2_xduy5p.jpg",
+        "NG Forest",
+        ["425", "768", "1046"] %}
+        <div class="credit" data-image-credit="Surupa Sen" ></div>
+      </div>
     </div>
     <p>
       Sass variables are simple: you assign a value to a name that begins with $, and then you can refer to that name instead of the value itself. But despite their simplicity, they’re one of the most useful tools Sass brings to the table. Variables make it possible to reduce repetition, do complex math, configure libraries, and much more.
@@ -153,9 +210,12 @@ eleventyNavigation:
 <div class="container">
   <div class="wrapper flow">
     <div class="flow-nontitletext">
-      {% image "https://res.cloudinary.com/nrityagram/image/upload/v1620734207/school-card_m5avwv.jpg",
+      <div class="image-plus">
+        {% image "https://res.cloudinary.com/nrityagram/image/upload/v1583857821/3-Odissi-Gurukul_wyfsdw.jpg",
       "NG Utsarga",
-      ["425", "768", "1600"] %}
+      ["425", "768", "1046"] %}
+        <div class="credit" data-image-credit="Lynne Fernandez" ></div>
+      </div>
     </div>
     <h2>Section 3</h2>
     <p>

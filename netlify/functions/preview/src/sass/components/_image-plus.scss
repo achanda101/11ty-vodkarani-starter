@@ -1,0 +1,66 @@
+@use '../abstracts/' as *;
+
+.image-plus {
+    position: relative;
+    border-radius: 12px;
+	overflow: hidden;
+    width: fit-content;
+    height: auto;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    // mobile
+    @include mqmax(medium) {
+        //TODO: To make the image stretch edge-to-edge
+        margin-left: -7.5vw;
+        width: 100vw;
+        height: auto;
+        border-radius: 0;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .credit {
+        position: absolute;
+        writing-mode: vertical-rl;
+        font-size: var(--fs-100);
+        font-family: var(--ff-sans);
+        color: hsl(var(--clr-neutral-100));
+
+        right: 2px;
+        bottom: 15px;
+
+        @include mq(medium) {
+            font-size: var(--fs-200);
+        }
+        @include mq(large) {
+            font-weight: var(--fw-light);
+        }
+    }
+    .credit::after {
+        content: 'Photo Credit: ' attr(data-image-credit);
+    }
+
+    .caption {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: -20px;
+
+        font-size: var(--fs-200);
+        font-family: var(--ff-serif);
+        font-weight: var(--fw-light);
+        color: hsl(var(--clr-neutral-100));
+        text-align: center;
+    }
+}
