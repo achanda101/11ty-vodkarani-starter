@@ -4,7 +4,7 @@
 	"description": "A starter template for building an 11ty static website.",
 	"scripts": {
 		"watch:sass": "sass --watch src/sass:_site/css",
-		"build:sass": "sass src/sass:_site/css",
+		"build:sass": "sass src/sass:_site/css --style compressed",
 		"watch:eleventy": "npx @11ty/eleventy --serve",
 		"build:eleventy": "npx @11ty/eleventy",
 		"debug:eleventy": "DEBUG=* npx @11ty/eleventy",

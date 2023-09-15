@@ -68,7 +68,7 @@
             "widecol";
 
         @include mq(medium) { 
-            grid-template-columns: 35% 65%;
+            grid-template-columns: 34% 63%;
             grid-template-areas:
                 "narrowcol widecol";
         }
@@ -89,7 +89,7 @@
             "narrowcol";
     
         @include mq(medium) {
-            grid-template-columns: 65% 35%;
+            grid-template-columns: 63% 34%;
             grid-template-areas:
                 "widecol narrowcol";
         }
